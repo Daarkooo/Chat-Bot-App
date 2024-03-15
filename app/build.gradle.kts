@@ -1,3 +1,6 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import com.sun.xml.fastinfoset.sax.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -18,6 +21,9 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+
+
     }
 
     buildTypes {
@@ -63,4 +69,13 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0") // to create view models
+
+    implementation("io.coil-kt:coil-compose:2.5.0") // for images
+
+    implementation("androidx.compose.material:material-icons-extended:1.6.3") // to get more icons
+
+    implementation("com.google.ai.client.generativeai:generativeai:0.2.2")
 }
