@@ -36,7 +36,7 @@ object ChatData {
     }
 
     // in case we a have a bitmap (image)
-    suspend fun  getResponse(prompt: String, bitmap: Bitmap):Chat{
+    suspend fun  getResponseWithImage(prompt: String, bitmap: Bitmap):Chat{
         val generativeModel = GenerativeModel(
             modelName = "gemini-pro-vision", // can take images(bitmap)
             apiKey = api_key
