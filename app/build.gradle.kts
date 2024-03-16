@@ -22,7 +22,7 @@ android {
             useSupportLibrary = true
         }
 
-
+        buildConfigField("String", "API_KEY", """"AIzaSyBsPxLGrxYTjHeSfMVxwx7E3z4Vtfnor4c"""")
 
     }
 
@@ -41,6 +41,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"

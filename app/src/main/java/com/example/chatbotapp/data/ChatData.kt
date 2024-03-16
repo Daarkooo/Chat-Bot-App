@@ -1,6 +1,7 @@
 package com.example.chatbotapp.data
 
 import android.graphics.Bitmap
+import com.example.chatbotapp.BuildConfig
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.ResponseStoppedException
 import com.google.ai.client.generativeai.type.content
@@ -9,7 +10,7 @@ import kotlinx.coroutines.withContext
 
 object ChatData {
 
-    val api_key = System.getenv("API_KEY")
+    val api_key = BuildConfig.API_KEY
 
     suspend fun  getResponse(prompt: String):Chat{
         val generativeModel = GenerativeModel(
@@ -26,7 +27,7 @@ object ChatData {
                 bitmap = null,
                 isFromUser = false
             )
-        }catch (e: ResponseStoppedException){
+        }catch (e: Exception){
             return Chat(
                 prompt = e.message ?: "error",
                 bitmap = null,
@@ -60,7 +61,7 @@ object ChatData {
                 bitmap = null,
                 isFromUser = false
             )
-        }catch (e: ResponseStoppedException){
+        }catch (e: Exception){
             return Chat(
                 prompt = e.message ?: "error",
                 bitmap = null,
